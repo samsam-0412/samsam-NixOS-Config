@@ -8,5 +8,7 @@
     ./pinta.nix
     ./guiTools.nix
     ./fileBrowser.nix
+    ./vscodium.nix
+    ./obsidian.nix
   ];
 }
