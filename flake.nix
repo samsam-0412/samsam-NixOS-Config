@@ -1,19 +1,14 @@
 {
-  description = "My Home Manager configuration";
-
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-26.05"; };
-    nixpkgs-unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-26.05";};
+    nixpkgs-unstable = { url = "github:NixOS/nixpkgs/nixos-unstable";};
     home-manager = { 
       url = "github:nix-community/home-manager/release-26.05"; 
       inputs.nixpkgs.follows = "nixpkgs"; 
     };
-    #helium = {url = "github:oxcl/nix-flake-helium-browser"; inputs.nixpkgs.follows = "nixpkgs";};
-    helium-flake = {url = "github:oxcl/nix-flake-helium-browser"; inputs.nixpkgs.follows = "nixpkgs";};
-    spicetify-nix = {url = "github:Gerg-L/spicetify-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
-    noctalia = {url = "github:noctalia-dev/noctalia"; inputs.nixpkgs.follows = "nixpkgs";};
-    niri = {url = "github:sodiboo/niri-flake"; inputs.nixpkgs.follows = "nixpkgs";};
-
+    helium-flake = { url = "github:oxcl/nix-flake-helium-browser"; inputs.nixpkgs.follows = "nixpkgs";};
+    noctalia = { url = "github:noctalia-dev/noctalia"; inputs.nixpkgs.follows = "nixpkgs";};
+    niri = { url = "github:sodiboo/niri-flake"; inputs.nixpkgs.follows = "nixpkgs";};
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -39,9 +34,7 @@
             ./software
             inputs.noctalia.homeModules.default
             inputs.niri.homeModules.niri
-            #inputs.helium.homeModules.default
             inputs.helium-flake.homeModules.default
-            inputs.spicetify-nix.homeManagerModules.default
 	       ];
         };
       };

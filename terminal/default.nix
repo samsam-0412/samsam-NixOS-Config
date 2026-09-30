@@ -4,5 +4,6 @@
     ./kitty.nix
     ./starship.nix
     ./cmdTools.nix
+    ./fastfetch.nix
   ];
 }
