@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.pinta ];
+   home.packages = [ pkgs.pinta ];
 }

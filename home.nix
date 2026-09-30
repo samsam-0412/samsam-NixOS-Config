@@ -14,4 +14,9 @@
 
     stateVersion = "26.05";
   };
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+    XCURSOR_SIZE = "18";
+  };
 }

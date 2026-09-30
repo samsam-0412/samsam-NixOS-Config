@@ -119,24 +119,17 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-	bibata-cursors
 	papirus-icon-theme
+    	bibata-cursors
+    	nwg-look
+	nwg-look
+  	qt6Packages.qt6ct
+	bibata-cursors
 	home-manager
         nextcloud-client
         niri
         proton-pass
   ];
-
-  gtk = {
-    enable = true;
-
-    iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
-
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

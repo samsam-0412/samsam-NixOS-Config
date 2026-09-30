@@ -1,4 +1,0 @@
-{ ... }:
-{
-    programs.driftvm.enable = true;
-}
