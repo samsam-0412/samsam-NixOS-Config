@@ -1,12 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    subfinder
-    tree
-    btop
-    fzf
-    tldr
-  ];
   programs.fastfetch = {
     enable = true;
     settings = {
