@@ -5,6 +5,7 @@
     curl
     gradle
     jdk21
+    sqlite
   ];
 
   programs.git = {

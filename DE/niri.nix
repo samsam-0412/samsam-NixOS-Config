@@ -19,10 +19,18 @@ workspace "T"
 workspace "$"
 workspace "B"
 
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 18
+}
+
+
 screenshot-path "~/Nextcloud/Personal/Screenshots/Linux/%Y-%m/%d_%H-%M-%S.png"
 
-
 binds {
+
+    
+
     // Applications
     Mod+Return hotkey-overlay-title="Open Terminal: kitty" {
         spawn "kitty";
@@ -346,7 +354,6 @@ binds {
 
 input {
     focus-follows-mouse max-scroll-amount="33%"
-
     touchpad {
         natural-scroll
         tap
@@ -354,7 +361,6 @@ input {
         click-method "clickfinger"
     }
 }
-
 
 
 layout {
@@ -374,8 +380,6 @@ layout {
 animations {
     off
 }
-
-
 
 output "eDP-1" {
     mode "1920x1080@60.020"
