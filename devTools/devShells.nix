@@ -1,28 +1,20 @@
-{
-  description = "Development shells";
+{ pkgs }:
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+{
+  java = pkgs.mkShell {
+    packages = with pkgs; [
+      jdk21
+      gradle
+      maven
+    ];
+
+    JAVA_HOME = "${pkgs.jdk21}";
   };
 
-  outputs = { nixpkgs, ... }: {
-    devShells.x86_64-linux = {
-      java = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-        packages = with nixpkgs.legacyPackages.x86_64-linux; [
-          jdk21
-          gradle
-          maven
-        ];
-
-        JAVA_HOME = "${nixpkgs.legacyPackages.x86_64-linux.jdk21}";
-      };
-
-      rust = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-        packages = with nixpkgs.legacyPackages.x86_64-linux; [
-          rustc
-          cargo
-        ];
-      };
-    };
+  rust = pkgs.mkShell {
+    packages = with pkgs; [
+      rustc
+      cargo
+    ];
   };
 }

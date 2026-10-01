@@ -9,3 +9,4 @@
   - ig each dev shell have things like sqlite
 - cleanup the software in /etc/nixos
 - in software folder do subcategories ig and dont have folders for DE and something
+- use own flake.nix for devshells instead of in flake.nix at root of home-manager dir

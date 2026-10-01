@@ -11,21 +11,16 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';
-    # TODO
-    # shellAliases = {
-    #  ll = "ls -lah";
-    #  la = "ls -A";
-    #  ".." = "cd ..";
-    #  gs = "git status";
-    #  rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
-    #};
+    
+    shellAliases = {
+      devrust = "nix develop ~/.config/home-manager/devTools#rust";
+      devjava = "nix develop ~/.config/home-manager/devTools#java";
+    };
     plugins = [
-      # Enable a plugin (here grc for colorized command output) from nixpkgs
       { 
         name = "grc"; 
 	      src = pkgs.fishPlugins.grc.src; 
       }
-      # Manually packaging and enable a plugin
       {
         name = "z";
         src = pkgs.fetchFromGitHub {
@@ -37,9 +32,4 @@
       }
     ];
   };
-  # TODO
-  # home.sessionVariables = {
-  # JAVA_HOME = "${pkgs.jdk}";
-  # PATH_TO_FX = "${pkgs.javaPackages.openjfx}/lib/openjfx";
-  # };
 }
