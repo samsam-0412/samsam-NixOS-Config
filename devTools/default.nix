@@ -1,6 +1,6 @@
 {
   imports = [
-    ./ide.nix
     ./cmdTools.nix
+    ./git.nix
   ];
 }
