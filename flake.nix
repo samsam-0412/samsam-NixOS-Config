@@ -12,17 +12,19 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = import nixpkgs { 
-      inherit system; 
-      config = { 
-        allowUnfree = true; 
-      }; 
-    };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      unstable = import inputs.nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
       homeConfigurations = {
         samsam = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs unstable; };
 
           modules = [
 	          ./home.nix
@@ -34,10 +36,6 @@
             inputs.helium-flake.homeModules.default
 	       ];
         };
-      };
-      devShells.${system} =
-        import ./devTools/devShells.nix {
-          inherit pkgs;
       };
     };
 }

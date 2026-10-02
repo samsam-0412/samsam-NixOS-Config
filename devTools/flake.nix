@@ -23,6 +23,12 @@
           cargo
         ];
       };
+      cpp = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        packages = with nixpkgs.legacyPackages.x86_64-linux; [
+          cmake
+          clang
+        ];
+      };
     };
   };
 }

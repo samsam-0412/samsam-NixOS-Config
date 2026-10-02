@@ -1,6 +1,5 @@
 { pkgs,... }: 
 {
- # grc package for grc plugin 
   home.packages = [
     pkgs.grc
   ];
@@ -13,8 +12,9 @@
     '';
     
     shellAliases = {
-      devrust = "nix develop ~/.config/home-manager/devTools#rust";
-      devjava = "nix develop ~/.config/home-manager/devTools#java";
+      devrust = "nix develop /home/samsam/.config/home-manager/devTools/flake.nix#rust";
+      devjava = "nix develop /home/samsam/.config/home-manager/devTools/flake.nix#java";
+      devcpp = "nix develop /home/samsam/.config/home-manager/devTools/flake.nix#cpp";
     };
     plugins = [
       { 

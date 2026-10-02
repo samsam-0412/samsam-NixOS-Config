@@ -388,6 +388,13 @@
         variable-refresh-rate
     }
 
+    output "Samsung Electric Company Odyssey G40B HNMW200062" {
+        mode "1920x1080@239.760"
+        scale 1
+        transform "normal"
+        position x=1600 y=0
+    }
+
 
 
     hotkey-overlay {

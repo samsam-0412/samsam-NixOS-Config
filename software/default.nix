@@ -10,5 +10,6 @@
     ./fileBrowser.nix
     ./vscodium.nix
     ./obsidian.nix
+    ./signal.nix
   ];
 }

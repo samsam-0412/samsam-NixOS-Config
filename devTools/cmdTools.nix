@@ -1,8 +1,10 @@
-{ pkgs,... }:
+{ pkgs, unstable, ... }:
+
 {
-  home.packages = with pkgs; [
-    gnumake
-    curl
-    sqlite
+  home.packages = [
+    pkgs.gnumake
+    pkgs.curl
+    pkgs.sqlite
+    unstable.javaPackages.compiler.temurin-bin.jdk-27
   ];
 }
