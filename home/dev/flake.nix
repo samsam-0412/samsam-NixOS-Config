@@ -22,12 +22,26 @@
           rustc
           cargo
         ];
+
+        # CARGO_HOME = "./.cargo"; für großes rust projekt diese
+        # shell in eigener dir kopieren und dann mit nix develop .#rust ausführen
       };
       cpp = nixpkgs.legacyPackages.x86_64-linux.mkShell {
         packages = with nixpkgs.legacyPackages.x86_64-linux; [
           cmake
           clang
         ];
+      };
+
+      go = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        packages = with nixpkgs.legacyPackages.x86_64-linux; [
+          go
+        ];
+
+        #GOMODCACHE = "./.go/pkg/mod";
+        #GOBIN = "./.go/bin";
+        #GOPATH = "./.go";
+        #gleiche wie bei rust ich brauche ein fish script dafür
       };
     };
   };

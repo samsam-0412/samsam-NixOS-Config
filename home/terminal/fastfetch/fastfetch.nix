@@ -3,7 +3,7 @@
   programs.fastfetch = {
     enable = true;
     settings = {
-        "$schema" = "~/.config/home-manager/utilities/fastfetchSchema.json";
+        "$schema" = "~/.config/home-manager/terminal/fastfetch/fastfetchSchema.json";
 	
     logo = {
       source = "~/Pictures/fastfetch/*";

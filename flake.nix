@@ -28,9 +28,6 @@
 
           modules = [
 	          ./home.nix
-	          ./devTools
-	          ./terminal
-            ./software
             inputs.noctalia.homeModules.default
             inputs.niri.homeModules.niri
             inputs.helium-flake.homeModules.default

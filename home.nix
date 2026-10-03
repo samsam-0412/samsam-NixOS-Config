@@ -1,8 +1,7 @@
 { lib, pkgs, inputs,... }:
 {
     imports = [
-      ./DE/noctalia.nix
-      ./DE/niri.nix
+      ./home
     ];
 
     home = {
