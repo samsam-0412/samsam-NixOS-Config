@@ -11,10 +11,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-##TODO put this block into modules######################################################
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -28,10 +24,8 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-########################################################################################
-
-
-  nix.settings.experimental-features = [ "nix-command flakes" ];
+  
+ nix.settings.experimental-features = [ "nix-command flakes" ];
   
 ##TODO put this block into modules################
   services.xserver.enable = true;
@@ -47,9 +41,6 @@
     isNormalUser = true;
     description = "samsam";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      proton-pass
-    ];
   };
 
   programs.niri.enable = true;
@@ -74,22 +65,11 @@
 
 
 ##TODO put this block into modules #################
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 53317 8080 ];
-    allowedUDPPortRanges = [
-      { from = 53317; to = 53317; }
-      { from = 8080; to = 8080; }
-    ];
-  };
   services = {
     openssh.enable = true;
   };
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.power-profiles-daemon.enable = false;
-#####################################################
-
-
+###################################################
   system.stateVersion = "26.05"; 
 }

@@ -13,6 +13,7 @@
     };
     printing.enable = true;
     pulseaudio.enable = false;
+    power-profiles-daemon.enable = false;
   };
   security.rtkit.enable = true;
 

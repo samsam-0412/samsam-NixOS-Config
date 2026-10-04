@@ -4,5 +4,6 @@
   imports = [
     ./services
     ./theme
+    ./network
   ];
 }
