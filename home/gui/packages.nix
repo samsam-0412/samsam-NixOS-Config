@@ -1,13 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 
 {
    home.packages = with pkgs; [ 
-      signal-desktop
-      cine
-      pinta
+      unstable.signal-desktop
+      unstable.proton-pass
       eduvpn-client
       nautilus
-      local-send
+      localsend
       obsidian
+      nextcloud-client
+      cine
+      pinta
    ];
 }

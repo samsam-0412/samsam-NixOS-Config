@@ -6,5 +6,6 @@
     btop
     fzf
     tldr
+    vim
   ];
 }

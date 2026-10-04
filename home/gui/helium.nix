@@ -4,7 +4,6 @@
     enable = true;
 
     flags = [
-      "--disable-gpu"
       "--ozone-platform-hint=auto"
     ];
 
@@ -14,11 +13,6 @@
       "SyncDisabled" = true;
       "SpellcheckEnabled" = true;
       "SpellcheckLanguage" = [ "en-US" ];
-
-      "ExtensionInstallForcelist" = [
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm"
-        "ghmbeldphafepmbegfdlkpapadhbakde"
-      ];
     };
   };
 }

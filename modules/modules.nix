@@ -2,6 +2,7 @@
 
 {
   imports = [
-    ./helium.nix
+    ./services
+    ./theme
   ];
 }

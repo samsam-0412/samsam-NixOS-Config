@@ -1,7 +1,10 @@
 { lib, pkgs, inputs,... }:
 {
     imports = [
-      ./home
+      ./terminal
+      ./gui
+      ./dev
+      ./de
     ];
 
     home = {
