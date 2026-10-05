@@ -2,7 +2,8 @@
 
 {
   imports = [
-    #./sddmAstronaut.nix
+    ./sddmAstronaut.nix
     ./packages.nix
+    ./font.nix
   ];
 }

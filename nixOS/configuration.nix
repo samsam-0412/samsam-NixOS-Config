@@ -2,9 +2,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
-      #./sddmAstronaut.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -25,18 +24,10 @@
     LC_TIME = "de_DE.UTF-8";
   };
   
- nix.settings.experimental-features = [ "nix-command flakes" ];
-  
-##TODO put this block into modules################
-  services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
+  nix.settings.experimental-features = [ "nix-command flakes" ];
+ 
   console.keyMap = "de";
-##################################################
-
+ 
   users.users."samsam" = {
     isNormalUser = true;
     description = "samsam";
@@ -45,31 +36,20 @@
 
   programs.niri.enable = true;
   
-
-##TODO put this block into modules#################################################
   programs.bash = {
-  interactiveShellInit = ''
+   interactiveShellInit = ''
     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-    then
+     then
       shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-    fi
-  '';
-};
-#################################################################################
+       exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+     fi
+   '';
+  };
 
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-	home-manager   
-  ];
-
-
-##TODO put this block into modules #################
-  services = {
-    openssh.enable = true;
-  };
+  environment.systemPackages = with pkgs; [ home-manager ];
+ 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-###################################################
   system.stateVersion = "26.05"; 
 }

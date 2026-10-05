@@ -6,7 +6,7 @@
     settings = {
       discordBranch = "stable";
       hardwareAcceleration = true;
-      minimizeToTray = true;
+      minimizeToTray = false;
     };
   };
 }

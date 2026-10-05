@@ -3,6 +3,7 @@
 {
     programs.niri.enable = true;
     programs.niri.package = pkgs.niri;
+    
 
     xdg.configFile."niri/config.kdl".text = ''
     include "~/.config/niri/noctalia.kdl"

@@ -6,5 +6,7 @@
     pkgs.curl
     pkgs.sqlite
     unstable.javaPackages.compiler.temurin-bin.jdk-27
+    nodejs
+    docker
   ];  
 }

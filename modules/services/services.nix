@@ -17,4 +17,10 @@
   };
   security.rtkit.enable = true;
 
+  services.xserver.enable = true;
+  services.desktopManager.plasma6.enable = false;
+  services.xserver.xkb = {
+    layout = "de";
+    variant = "";
+  };
 }

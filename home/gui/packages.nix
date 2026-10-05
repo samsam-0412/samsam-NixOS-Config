@@ -4,6 +4,7 @@
    home.packages = with pkgs; [ 
       unstable.signal-desktop
       unstable.proton-pass
+      unstable.fetch
       eduvpn-client
       nautilus
       localsend
@@ -11,5 +12,7 @@
       nextcloud-client
       cine
       pinta
+      unstable.firefox
+      wireshark
    ];
 }
