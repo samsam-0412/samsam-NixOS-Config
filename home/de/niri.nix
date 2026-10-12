@@ -3,7 +3,9 @@
 {
     programs.niri.enable = true;
     programs.niri.package = pkgs.niri;
-    
+     home.packages = with pkgs; [
+        xwayland-satellite
+    ];
 
     xdg.configFile."niri/config.kdl".text = ''
     include "~/.config/niri/noctalia.kdl"

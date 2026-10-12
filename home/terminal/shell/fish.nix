@@ -8,13 +8,17 @@
     enable = true;
 
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
+      set fish_greeting
+      set -e SSH_ASKPASS
+      set -e SSH_ASKPASS_REQUIRE
     '';
     
     shellAliases = {
-      devrust = "nix develop /home/samsam/.config/home-manager/devTools/flake.nix#rust";
-      devjava = "nix develop /home/samsam/.config/home-manager/devTools/flake.nix#java";
-      devcpp = "nix develop /home/samsam/.config/home-manager/devTools/flake.nix#cpp";
+      devrust = "nix develop /home/samsam/.config/home-manager/home/dev/flake.nix#rust";
+      devcpp = "nix develop /home/samsam/.config/home-manager/home/dev/flake.nix#cpp";
+      devgo = "nix develop /home/samsam/.config/home-manager/home/dev/flake.nix#go";
+      devpy = "nix develop /home/samsam/.config/home-manager/home/dev/flake.nix#python";
+      devnode = "nix develop /home/samsam/.config/home-manager/home/dev/flake.nix#nodejs";
     };
     plugins = [
       { 

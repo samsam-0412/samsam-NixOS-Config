@@ -4,7 +4,6 @@
    home.packages = with pkgs; [ 
       unstable.signal-desktop
       unstable.proton-pass
-      unstable.fetch
       eduvpn-client
       nautilus
       localsend
@@ -13,6 +12,9 @@
       cine
       pinta
       unstable.firefox
-      wireshark
+      blender
+      geogebra6
+      #discord
+      #steam not working maybe fix later
    ];
 }

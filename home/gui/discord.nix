@@ -1,12 +1,16 @@
-{ ... }:
+{ pkgs, unstable, inputs, ... }:
 
 {
-  programs.vesktop = {
+  imports = [
+    inputs.nixcord.homeModules.nixcord
+  ];
+
+  programs.nixcord = {
     enable = true;
-    settings = {
-      discordBranch = "stable";
-      hardwareAcceleration = true;
-      minimizeToTray = false;
+
+    discord = {
+      enable = true;
+      krisp.enable = true;
     };
   };
 }

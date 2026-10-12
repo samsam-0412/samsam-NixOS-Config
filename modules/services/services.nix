@@ -1,5 +1,5 @@
 { ... }:
-#put these into more files in the future
+
 {
   services = {
     upower.enable = true;
@@ -16,9 +16,7 @@
     power-profiles-daemon.enable = false;
   };
   security.rtkit.enable = true;
-
   services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = false;
   services.xserver.xkb = {
     layout = "de";
     variant = "";

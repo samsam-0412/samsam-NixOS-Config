@@ -7,5 +7,6 @@
     fzf
     tldr
     vim
+    docker-compose
   ];
 }

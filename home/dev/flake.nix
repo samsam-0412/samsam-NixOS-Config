@@ -7,25 +7,18 @@
 
   outputs = { nixpkgs, ... }: {
     devShells.x86_64-linux = {
-      java = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-        packages = with nixpkgs.legacyPackages.x86_64-linux; [
-          jdk21
-          gradle
-          maven
-        ];
-
-        JAVA_HOME = "${nixpkgs.legacyPackages.x86_64-linux.jdk21}";
-      };
-
       rust = nixpkgs.legacyPackages.x86_64-linux.mkShell {
         packages = with nixpkgs.legacyPackages.x86_64-linux; [
           rustc
           cargo
         ];
 
-        # CARGO_HOME = "./.cargo"; für großes rust projekt diese
-        # shell in eigener dir kopieren und dann mit nix develop .#rust ausführen
+        shellHook = ''
+          export CARGO_HOME="$PWD/.cargo"
+          export PATH="$CARGO_HOME/bin:$PATH"
+        '';
       };
+
       cpp = nixpkgs.legacyPackages.x86_64-linux.mkShell {
         packages = with nixpkgs.legacyPackages.x86_64-linux; [
           cmake
@@ -38,10 +31,42 @@
           go
         ];
 
-        #GOMODCACHE = "./.go/pkg/mod";
-        #GOBIN = "./.go/bin";
-        #GOPATH = "./.go";
-        #gleiche wie bei rust ich brauche ein fish script dafür
+        shellHook = ''
+          export GOPATH="$PWD/.go"
+          export GOMODCACHE="$GOPATH/pkg/mod"
+          export GOBIN="$GOPATH/bin"
+          export PATH="$GOBIN:$PATH"
+        '';
+      };
+
+      python = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        packages = with nixpkgs.legacyPackages.x86_64-linux; [
+          python3
+          python3Packages.pip
+        ];
+
+        shellHook = ''
+        export VIRTUAL_ENV="$PWD/.venv"
+        export PATH="$VIRTUAL_ENV/bin:$PATH"
+
+        if [ ! -d "$VIRTUAL_ENV" ]; then
+          python -m venv "$VIRTUAL_ENV"
+        fi
+        
+      '';
+      };
+      nodejs = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        packages = with nixpkgs.legacyPackages.x86_64-linux; [
+          nodejs_24
+          pnpm
+          nodemon
+          typescript-language-server
+        ];
+
+        shellHook = ''
+          export NPM_CONFIG_PREFIX="$PWD/.npm-global"
+          export PATH="$NPM_CONFIG_PREFIX/bin:$PWD/node_modules/.bin:$PATH"
+        '';
       };
     };
   };

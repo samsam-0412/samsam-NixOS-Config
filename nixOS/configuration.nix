@@ -31,7 +31,7 @@
   users.users."samsam" = {
     isNormalUser = true;
     description = "samsam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "wireshark" ];
   };
 
   programs.niri.enable = true;
