@@ -9,12 +9,12 @@
       localsend
       obsidian
       nextcloud-client
-      cine
+      totem
       pinta
-      unstable.firefox
+      unstable.firefox 
       blender
       geogebra6
-      #discord
-      #steam not working maybe fix later
+      evince
+      loupe
    ];
 }

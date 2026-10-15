@@ -7,5 +7,7 @@
     ./services.nix
     ./docker.nix
     ./wireshark.nix
+    ./xdg.nix
+    ./mime.nix
   ];
 }

@@ -6,14 +6,13 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       # rost
       rust-lang.rust-analyzer
-      vadimcn.vscode-lldb
       tamasfe.even-better-toml
 
       # schlange
       ms-python.python
       charliermarsh.ruff
 
-      # go
+      # gehen
       golang.go
 
       # c c+-
@@ -21,7 +20,7 @@
       ms-vscode.cmake-tools
       twxs.cmake
 
-      # node
+      # knoten
       dbaeumer.vscode-eslint
       esbenp.prettier-vscode
       christian-kohler.npm-intellisense
@@ -29,6 +28,7 @@
 
       # general
       jnoortheen.nix-ide
+      tomoki1207.pdf
     ];
   };
 }
