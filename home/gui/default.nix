@@ -2,8 +2,9 @@
 
 {
   imports = [
+    ./discord_clients.nix
     ./packages.nix
-    ./discord.nix
+    #./discord.nix
     ./vscodium.nix
   ];
 }

@@ -1,18 +1,27 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
 
     extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
 
     config = {
+      niri = {
+        default = [ "gnome" "gtk" ];
+
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
+
       common.default = [ "gnome" "gtk" ];
     };
-  };
+  } ;
 
   environment.systemPackages = with pkgs; [
     xdg-utils
